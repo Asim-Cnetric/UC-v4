@@ -1,7 +1,7 @@
 const AuthServices = require("../services/auth")
 
 const authMiddleware = (req, res, next) => {
-  const authHeader = req.headers.authorization;
+  const authHeader = req.header('Authorization');
 
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res

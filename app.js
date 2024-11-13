@@ -3,7 +3,7 @@ const express = require("express");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const compression = require("compression");
-const corsMiddleware = require("./utils/cors");
+const cors = require("cors");
 const routes = require("./routes");
 const startServer = require("./server");
 const path = require("path");
@@ -14,7 +14,7 @@ const app = express();
 app.use(helmet());
 
 // CORS middleware to allow requests from different origins
-app.use(corsMiddleware());
+app.use(cors());
 
 // Compression middleware for better performance
 app.use(compression());
